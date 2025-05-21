@@ -27,20 +27,5 @@ namespace coffeeshop.Models.Services
         {
             return dbContext.Products.Where(p => p.IsTrendingProduct);
         }
-
-        IEnumerable<Products> IProductRepository.GetAllProducts()
-        {
-            throw new NotImplementedException();
-        }
-
-        Products IProductRepository.GetProductDetail(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<Products> IProductRepository.GetTrendingProducts()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
