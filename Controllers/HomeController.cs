@@ -1,21 +1,26 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using CoffeShop.Models;
+using CoffeShop.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoffeShop.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private IProductRepository ProductRepository;
+        public HomeController(IProductRepository productRepository)
         {
-            _logger = logger;
+            this.ProductRepository = productRepository;
         }
+
 
         public IActionResult Index()
         {
-            return View();
+            return View(ProductRepository.GetTrendingProducts());
+        }
+        public IActionResult Shop()
+        {
+            return View(ProductRepository.GetAllProducts());
         }
 
         public IActionResult Privacy()
