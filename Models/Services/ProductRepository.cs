@@ -15,7 +15,7 @@ namespace coffeeshop.Models.Services
 
         public IEnumerable<Products> GetAllProducts()
         {
-            return dbContext.Products;
+            return dbContext.Products.ToList();
         }
 
         public Products? GetProductDetail(int id)

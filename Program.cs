@@ -1,4 +1,4 @@
-
+﻿
 using coffeeshop.Models.Services;
 using CoffeeShop.Data;
 using CoffeeShop.Models.Interfaces;
@@ -47,6 +47,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseSession();
+
 
 app.MapControllerRoute(
     name: "default",
